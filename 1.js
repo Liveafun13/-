@@ -3,7 +3,7 @@ const swap = (array) =>
     let i = array.length-1;
     let result = [];
     
-    if(i < 2)
+    if(i < 1)
     
     {
         return array;
