@@ -233,3 +233,100 @@ let arr = [1,2,3];
 
 console.log(getSameParity(arr))
 
+
+12  задание
+функцию, которая принимает на вход в виде массива кошелек с деньгами и название валюты и возвращает сумму денег указанной валюты.
+const getTotalA = (wallet, money) =>{
+let result_num = 0;
+  for(let i = 0; i < wallet.length; i++){
+    let result_val = wallet[i];
+    if(result_val.slice(0,3) === money){
+      result_num += wallet[i].slice(3) * 1;
+    }
+  }
+return result_num;
+};
+
+let arr = ["eur 10", "usd 1", "usd 10","rub 50", "usd 5"];
+
+console.log(getTotalA(arr, "usd"))
+
+
+
+13  задание
+Реализуйте и экспортируйте функцию getTheNearestLocation(), которая находит ближайшее место к указанной точке на карте и возвращает его.
+
+const getDistance = (pointA, pointB) => {
+  const xDistance = pointA[0] - pointB[0];
+  const yDistance = pointA[1] - pointB[1];
+  return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+};
+
+const getTotalA = (locations, currentP) =>{
+  let result;
+  let result_point;
+  let result_name;
+  
+  if(locations === null){
+    return null;
+  }
+    
+  else{
+    for(let i = 0; i < locations.length; i++){
+      let points = locations[i];
+      let point = points[1];
+      let name_l = points[0];
+      
+      result = getDistance(point, currentP);
+      
+      if(result < 99999999){
+        result_name = name_l;
+        result_point = point;
+      }   
+    }
+  }
+  return result_name;
+};
+
+let current = [5,5];
+let arr = [
+  ["Park",[10,5]],
+  ["Sea",[1,3]],
+  ["Museum",[8,4]],
+];
+
+console.log(getTotalA(arr, current))
+
+
+14  задание
+Реализуйте и экспортируйте функцию getMax(), которая ищет в массиве максимальное значение и возвращает его
+
+const getMax = (arr) =>{
+  let result = arr[0];
+  if(arr === null){
+    return arr;
+  }
+  else{
+    for(const i of arr){
+      if(result < i){
+        result = i;
+      }
+    }
+  }
+  return result;
+};
+
+let arr = [1,10,8,7];
+
+console.log(getMax(arr))
+
+
+15  задание
+Реализуйте и экспортируйте по умолчанию функцию, которая возвращает объект, соответствующий JSON из файла example.json в этом упражнении.
+const exampleObject = () => {
+  return {
+    "name": "John Doe",
+    "age": 35,
+    }
+};
+
